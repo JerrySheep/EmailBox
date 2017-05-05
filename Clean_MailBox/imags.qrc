@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icon_search_hover.png</file>
+        <file>icon_search_normal.png</file>
+        <file>icon_search_press.png</file>
+    </qresource>
+</RCC>
