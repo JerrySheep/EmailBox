@@ -1,6 +1,7 @@
 #ifndef LOGINDLG_H
 #define LOGINDLG_H
 
+#include "logindlg.h"
 #include <QDialog>
 #include <widget.h>
 
@@ -20,11 +21,10 @@ private slots:
     void on_LoginBtn_clicked();
 
 signals:
-    void sendUsrInfo(int,QString);
+    void sendUsrInfo(QString,QString);
 
 private:
     Ui::loginDlg *ui;
-    Widget *w;
 };
 
 #endif // LOGINDLG_H

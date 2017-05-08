@@ -1,4 +1,4 @@
-#include "wrtdlg.h"
+﻿#include "wrtdlg.h"
 #include "ui_wrtdlg.h"
 
 WrtDlg::WrtDlg(QWidget *parent) :
@@ -6,7 +6,7 @@ WrtDlg::WrtDlg(QWidget *parent) :
     ui(new Ui::WrtDlg)
 {
     ui->setupUi(this);
-    this->setWindowTitle("邮件编辑");
+    this->setWindowTitle(QStringLiteral("邮件编辑"));
 }
 
 WrtDlg::~WrtDlg()
@@ -14,8 +14,8 @@ WrtDlg::~WrtDlg()
     delete ui;
 }
 
-void WrtDlg::getUsrInfo(int getId, QString getName){
+void WrtDlg::getUsrInfo(QString getId, QString getName){
     id = getId; name = getName;
-    ui->id2PlayLabel->setText("发件人："+name+"<"+id+">:");
+    ui->id2PlayLabel->setText(QStringLiteral("发件人：")+"<"+id+">:");
     ui->id2PlayLabel->setStyleSheet("font-size : 12px");
 }

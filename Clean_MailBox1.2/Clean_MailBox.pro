@@ -19,8 +19,9 @@ SOURCES += main.cpp\
 
 HEADERS  += widget.h \
     logindlg.h \
-    database.h \
-    wrtdlg.h
+    wrtdlg.h \
+    popLogIn.h \
+    database.h
 
 FORMS    += widget.ui \
     logindlg.ui \

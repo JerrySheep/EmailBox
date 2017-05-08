@@ -19,8 +19,8 @@
   <widget class="QLabel" name="timeLabel">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>10</y>
+     <x>290</x>
+     <y>0</y>
      <width>51</width>
      <height>16</height>
     </rect>
@@ -35,17 +35,17 @@
   <widget class="QLabel" name="helloLabel">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>0</y>
-     <width>111</width>
-     <height>31</height>
+     <x>5</x>
+     <y>2</y>
+     <width>151</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">font: 25 9pt &quot;微软雅黑 Light&quot;;</string>
    </property>
    <property name="text">
-    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:600;&quot;&gt;helloLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;helloLabel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="searchEdit">
@@ -88,7 +88,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>140</y>
+     <y>170</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -105,7 +105,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>160</y>
+     <y>200</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -122,7 +122,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>120</y>
+     <y>140</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -138,7 +138,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
   <widget class="QListWidget" name="list2Play">
    <property name="geometry">
     <rect>
-     <x>120</x>
+     <x>130</x>
      <y>80</y>
      <width>161</width>
      <height>261</height>
@@ -181,7 +181,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>100</y>
+     <y>110</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -198,7 +198,7 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>180</y>
+     <y>230</y>
      <width>101</width>
      <height>23</height>
     </rect>
@@ -327,6 +327,36 @@ QPushButton:hover{border-color:green; background:transparent;}</string>
    </property>
    <property name="text">
     <string/>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="classifyComboBox">
+   <property name="geometry">
+    <rect>
+     <x>330</x>
+     <y>40</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>0</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border:0px solid lightgray; } 
+QPushButton:hover{color:green;}</string>
+   </property>
+   <property name="text">
+    <string>退出登录</string>
    </property>
   </widget>
  </widget>

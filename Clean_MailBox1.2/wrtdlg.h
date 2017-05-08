@@ -16,12 +16,12 @@ public:
     ~WrtDlg();
 
 private slots:
-    void getUsrInfo(int id,QString name);
+    void getUsrInfo(QString id,QString name);
 
 
 private:
     Ui::WrtDlg *ui;
-    int id;
+    QString id;
     QString name;
 };
 

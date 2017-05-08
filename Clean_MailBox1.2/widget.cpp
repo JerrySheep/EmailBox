@@ -1,7 +1,10 @@
-#include "widget.h"
+﻿#include "widget.h"
 #include "ui_widget.h"
+#include "logindlg.h"
 #include <QtCore>
 #include <QTextCodec>
+
+loginDlg *logindg;
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
@@ -10,7 +13,7 @@ Widget::Widget(QWidget *parent) :
     //创建子界面——编辑界面
     edit = new WrtDlg;
     //连接与子界面的信号和槽
-    connect(this, SIGNAL(sendUsrInfo(int,QString)),edit, SLOT(getUsrInfo(int,QString)));
+    connect(this, SIGNAL(sendUsrInfo(QString,QString)),edit, SLOT(getUsrInfo(QString,QString)));
 
     ui->setupUi(this);
     //新建定时器
@@ -20,6 +23,10 @@ Widget::Widget(QWidget *parent) :
     //定时器开始计时
     timer->start(1000);
     ui->timeLabel->setStyleSheet("font-size : 14px");
+    ui->classifyComboBox->addItem(QStringLiteral("普通"));
+    ui->classifyComboBox->addItem(QStringLiteral("垃圾"));
+    ui->classifyComboBox->addItem(QStringLiteral("工作"));
+    ui->classifyComboBox->addItem(QStringLiteral("好友"));
 }
 
 Widget::~Widget()
@@ -36,11 +43,11 @@ void Widget::timerUpDate(){
     ui->timeLabel->setText(str);
 }
 
-void Widget::getUsrInfo(int getId, QString getName){
+void Widget::getUsrInfo(QString getId, QString getName){
     id = getId; name = getName;
 
-    ui->helloLabel->setText("你好, "+name);
-    ui->helloLabel->setStyleSheet("font-size : 16px");
+    ui->helloLabel->setText("<"+id+">");
+    ui->helloLabel->setStyleSheet("font-size : 12px");
 }
 
 
@@ -51,4 +58,11 @@ void Widget::on_sendBtn_clicked()
     edit->show();
     edit->exec();
     this->show();
+}
+
+void Widget::on_pushButton_clicked()
+{
+    this->close();
+    logindg = new loginDlg;
+    logindg->show();
 }

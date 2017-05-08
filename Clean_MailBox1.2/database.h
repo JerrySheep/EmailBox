@@ -20,13 +20,9 @@ static bool createConnection(){
         return false;
     }
     QSqlQuery query;
-    query.exec("create table user (id int primary key, "
-               "name varchar(20), pswd int)");
-    query.exec("insert into user values(0, '张三', 0)");
-    query.exec("insert into user values(1, '李四', 1)");
-    query.exec("insert into user values(2, '王五', 2)");
-    query.exec("insert into user values(3, '徐六', 3)");
-    query.exec("insert into user values(4, '陈七', 4)");
+    query.exec("create table user (id varchar(40) primary key, "
+               "name varchar(20), pswd varcahr(40), last char(1))");
+    query.exec("insert into user values('1846182474@qq.com', '张三', '0','0')");
     return true;
 }
 

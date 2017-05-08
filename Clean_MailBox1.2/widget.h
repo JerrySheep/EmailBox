@@ -1,8 +1,9 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include "logindlg.h"
 #include <QWidget>
-#include <wrtdlg.h>
+#include "wrtdlg.h"
 
 namespace Ui {
 class Widget;
@@ -18,17 +19,19 @@ public:
 
 private slots:
     void timerUpDate();
-    void getUsrInfo(int id,QString name);
+    void getUsrInfo(QString id,QString name);
 
     void on_sendBtn_clicked();
 
+    void on_pushButton_clicked();
+
 signals:
-    void sendUsrInfo(int,QString);
+    void sendUsrInfo(QString,QString);
 
 private:
     Ui::Widget *ui;
     WrtDlg *edit;
-    int id;
+    QString id;
     QString name;
 };
 
