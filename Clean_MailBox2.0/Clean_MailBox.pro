@@ -21,7 +21,10 @@ HEADERS  += widget.h \
     logindlg.h \
     wrtdlg.h \
     popLogIn.h \
-    database.h
+    database.h \
+    stdafx.h \
+    base64.h \
+    sendMail.h
 
 FORMS    += widget.ui \
     logindlg.ui \
@@ -29,3 +32,8 @@ FORMS    += widget.ui \
 
 RESOURCES += \
     imags.qrc
+
+DISTFILES += \
+    ham.csv \
+    spam.csv \
+    classify.py

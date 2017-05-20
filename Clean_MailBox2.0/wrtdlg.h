@@ -16,13 +16,18 @@ public:
     ~WrtDlg();
 
 private slots:
-    void getUsrInfo(QString id,QString name);
+    void getUsrInfo(QString id,QString name, int draftId);
 
+
+    void on_sendBtn_clicked();
+
+    void on_SaveBtn_clicked();
 
 private:
     Ui::WrtDlg *ui;
     QString id;
-    QString name;
+    QString pswd;
+    int draftId;
 };
 
 #endif // WRTDLG_H

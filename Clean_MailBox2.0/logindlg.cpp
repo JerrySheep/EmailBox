@@ -14,9 +14,9 @@ loginDlg::loginDlg(QWidget *parent) :
     ui(new Ui::loginDlg)
 {
     ui->setupUi(this);
-    w = new Widget;
     QSqlQuery q;
-    q.exec("select * from user where last='1'");
+    w = new Widget;
+    q.exec("select * from user where last=1");
     if(q.next()){
         ui->usrlineEdit->setText(q.value(0).toString());
         ui->pwdlineEdit->setText(q.value(2).toString());
@@ -44,7 +44,7 @@ void loginDlg::on_LoginBtn_clicked()
     if(logIn(string("user ")+userId+string("\t\n"),
              string("pass ")+userPswd+string("\t\n"))){
        QSqlQuery query;
-       query.exec("update user set last='0' where last='1'");
+       query.exec("update user set last=0 where last=1");
        if(ui->saveButton->isChecked()){
            //判断是否之前已经登录过
            query.prepare("select * from user where id=?");
@@ -52,7 +52,7 @@ void loginDlg::on_LoginBtn_clicked()
            query.exec();
            if(query.next()){
                //登录过则直接更新
-               query.prepare("update user set last='1' where id=?");
+               query.prepare("update user set last=1 where id=?");
                query.addBindValue(QString::fromStdString(userId));
                query.exec();
            }else{
@@ -68,16 +68,17 @@ void loginDlg::on_LoginBtn_clicked()
        q.prepare("select * from user");
        q.exec();
        while(q.next()){
-           qDebug() << q.value(0).toString() << q.value(2).toString() << q.value(3).toString();
+           qDebug() << q.value(0).toString() << q.value(2).toString() << q.value(3).toInt();
        }
+
+       emit sendUsrInfo(QString::fromStdString(userId), QString::fromStdString(userPswd));
        this->accept();
        w->show();
        //发送用户账号、密码至主界面
-       emit sendUsrInfo(QString::fromStdString(userId), QString::fromStdString(userPswd));
     }
     else{
         QMessageBox::warning(this,QStringLiteral("失败！"),QStringLiteral("请检查账号、密码以及网络连接"),QMessageBox::Yes);
-        ui->usrlineEdit->clear();//清空用户名输入框
+        //ui->usrlineEdit->clear();//清空用户名输入框
         ui->pwdlineEdit->clear();//清空密码输入框
         ui->usrlineEdit->setFocus();//移动光标至用户名输入框
     }

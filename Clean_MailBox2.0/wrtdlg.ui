@@ -17,7 +17,7 @@
    <string notr="true">font: 25 9pt &quot;微软雅黑 Light&quot;;
 background-color: rgb(236, 237, 241);</string>
   </property>
-  <widget class="QLineEdit" name="RecieverBtn">
+  <widget class="QLineEdit" name="RecieverEdit">
    <property name="geometry">
     <rect>
      <x>90</x>
