@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icon_search_hover.png</file>
+        <file>icon_search_normal.png</file>
+        <file>icon_search_press.png</file>
+        <file>email.png</file>
+        <file>timg.jpg</file>
+        <file>timg2.jpg</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>2.qss</file>
+        <file>spam.csv</file>
+        <file>ham.csv</file>
+        <file>classify.py</file>
+    </qresource>
+</RCC>
